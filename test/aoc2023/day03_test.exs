@@ -69,7 +69,6 @@ defmodule Aoc2023.Day03Test do
 
     test "given the full input, get only the numbers that are part numbers" do
       part_nums = get_all_part_nums(@test_data)
-      dbg(part_nums)
       assert length(part_nums) == 8
     end
   end

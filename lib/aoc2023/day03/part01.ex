@@ -13,7 +13,6 @@ defmodule Aoc2023.Day03.Part01 do
   def solve(input) do
     input
     |> get_all_part_nums()
-    |> dbg()
     |> Enum.sum()
   end
 
