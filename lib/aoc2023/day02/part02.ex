@@ -28,8 +28,6 @@ defmodule Aoc2023.Day02.Part02 do
       color_strs
       |> Enum.reduce(0, fn x, acc -> set_min_val(x, acc, "green") end)
 
-    dbg("min_red #{min_red}, min_blue #{min_blue}, min_green #{min_green}")
-
     min_red * min_blue * min_green
   end
 
