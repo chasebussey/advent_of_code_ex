@@ -43,12 +43,10 @@ defmodule Aoc2023.Day04.Part02 do
   end
 
   def apply_winnings([card | []], sum_of_copies) do
-    dbg(card)
     sum_of_copies + card.copies
   end
   
   def apply_winnings([card | cards], sum_of_copies) do
-    dbg(card)
     sum_of_copies = sum_of_copies + card.copies
 
     updated_cards =
