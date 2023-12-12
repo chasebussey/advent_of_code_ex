@@ -46,7 +46,6 @@ defmodule Aoc2023.Day06.Part01 do
       |> abs()
 
     {first_root, second_root}
-    |> dbg
   end
 
   defp to_num_list(input_str) do
@@ -57,7 +56,6 @@ defmodule Aoc2023.Day06.Part01 do
     |> String.split(" ")
     |> Enum.filter(fn x -> String.length(x) > 0 end)
     |> Enum.map(&Float.parse/1)
-    |> dbg
     |> Enum.map(fn x -> elem(x, 0) end)
   end
 end

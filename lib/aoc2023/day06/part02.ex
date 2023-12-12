@@ -48,7 +48,6 @@ defmodule Aoc2023.Day06.Part02 do
       |> abs()
 
     {first_root, second_root}
-    |> dbg
   end
 
   defp to_num(input_str) do
@@ -60,7 +59,6 @@ defmodule Aoc2023.Day06.Part02 do
     |> Enum.filter(fn x -> String.length(x) > 0 end)
     |> List.to_string()
     |> Float.parse()
-    |> dbg
     |> elem(0)
   end
 end

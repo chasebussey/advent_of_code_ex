@@ -57,26 +57,22 @@ defmodule Aoc2023.Day07.Part02 do
   end
 
   def get_hand_type_with_joker(hand_str) do
-    cards = String.to_charlist(hand_str) |> dbg
-    num_jokers = Enum.count(cards, fn x -> x == ?J end) |> dbg
+    cards = String.to_charlist(hand_str)
+    num_jokers = Enum.count(cards, fn x -> x == ?J end)
 
     unique_cards = 
       cards
       |> Enum.filter(fn x -> x != ?J end)
       |> Enum.uniq()
-      |> dbg
 
     [highest | _others] = case length(unique_cards) > 0 do
       true -> 
         unique_cards
           |> Enum.map(fn x -> Enum.count(cards, fn y -> y == x end) end)
           |> Enum.sort(:desc)
-          |> dbg
       false -> [-1 | []]
     end
     
-    dbg("#{highest}, #{num_jokers}")
-
     case highest + num_jokers - length(unique_cards) do
       -2 -> :one_pair
       0  -> :three_of_a_kind
